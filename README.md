@@ -39,3 +39,34 @@ O Decorator é um padrão de projeto estrutural que permite adicionar responsabi
 Nesse caso em específico da atividade realizada, eu utilizei o padrão para implementar o sistema de aprimoramento de armas no sistema de RPG de mesa *Tormenta20*. A classe `BaseWeapon` representa a arma comum. Para adicionar melhorias (como *Cruel* ou *Certeira*, presentes no livro de regras de *Tormenta20*), o objeto da arma é "embrulhado" por classes decoradoras. Isso permite que uma única espada receba múltiplos bônus acumulativos, por exemplo, concatenando strings de dano pra formar 1d10/1d12+1 sem a necessidade de criar subclasses para cada combinação possível das melhorias.
 
 ---
+
+## Rodando os programas
+
+Para rodar os programas, primeiro você precisará clonar o repositório:
+```
+git clone https://github.com/matheusdallap/design-patterns.git
+``` 
+Após isso, acesse o diretório do respectivo programa e depois, rode o comando para execução do arquivo, a compilação não é necessária. Abaixo segue o exemplo de como seria a execução do observer: 
+
+```
+cd design-patterns/
+cd observer/
+node observer.js
+```
+Saída esperada:
+```
+Inicio do combate (attach iniciando)
+[Mestre]: Beren entrou na área de ameaça de Gatzvalith, Lorde da Tormenta
+[Mestre]: Desmond entrou na área de ameaça de Gatzvalith, Lorde da Tormenta
+[Mestre]: Agrios entrou na área de ameaça de Gatzvalith, Lorde da Tormenta
+[CHEFE] Gatzvalith, Lorde da Tormenta está executando: Raio da Anticriação
+Beren da classe Bárbaro percebeu Raio da Anticriação e conseguiu resistir ao ataque.
+Desmond da classe Feiticeiro percebeu Raio da Anticriação e conseguiu resistir ao ataque.
+Agrios da classe Guerreiro percebeu Raio da Anticriação e conseguiu resistir ao ataque.
+
+Mudança no grupo (Unattach)
+[Mestre]: Desmond fugiu ou caiu inconsciente.
+[CHEFE] Gatzvalith, Lorde da Tormenta está executando: Sedução
+Beren da classe Bárbaro percebeu Sedução e conseguiu resistir ao ataque.
+Agrios da classe Guerreiro percebeu Sedução e conseguiu resistir ao ataque.
+```
